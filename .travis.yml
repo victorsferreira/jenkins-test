@@ -7,6 +7,9 @@ before_install:
   - docker build -t my_domain/project_name -f ./Dockerfile .
   - docker save my_domain/project_name | gzip -c > app_image.tar.gz
   - chmod +r app_image.tar.gz
+  - which scp
+  - which ssh
 
 script:
   - echo "Ola travis"
+  - ssh -t root@167.99.6.108 touch /root/projects/foo
