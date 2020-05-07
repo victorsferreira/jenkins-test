@@ -1,0 +1,7 @@
+FROM node:10.15.3-alpine
+
+RUN echo $INITIAL_MESSAGE
+
+EXPOSE 8090
+
+CMD exit 0;
