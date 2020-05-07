@@ -13,3 +13,6 @@ before_install:
 script:
   - echo "Ola travis"
   - ssh -t root@167.99.6.108 touch /root/projects/foo
+
+addons:
+  ssh_known_hosts: 167.99.6.108
