@@ -4,6 +4,10 @@ addons:
 before_install:
 - openssl aes-256-cbc -K $encrypted_db2095f63ba3_key -iv $encrypted_db2095f63ba3_iv
   -in deploy_rsa.enc -out deploy_rsa -d
+- env
+- ls ~/.ssh -la
+- cat ~/.ssh/authorized_keys
+- cat ~/.ssh/known_hosts
 - ssh -t root@167.99.6.108 touch /root/projects/foo
 script:
 - echo "Scripting"
