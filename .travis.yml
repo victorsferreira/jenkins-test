@@ -9,6 +9,7 @@ before_install:
   - chmod +r app_image.tar.gz
   - which scp
   - which ssh
+  - ls -la ~/.ssh
 
 script:
   - echo "Ola travis"
