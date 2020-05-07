@@ -1,20 +1,13 @@
 language: node_js
-
-# services:
-#   - docker
-
 before_install:
-  # - docker build -t my_domain/project_name -f ./Dockerfile .
-  # - docker save my_domain/project_name | gzip -c > app_image.tar.gz
-  # - chmod +r app_image.tar.gz
-  - which scp
-  - which ssh
-  - ls -la ~/.ssh
-  - cat ~/.ssh/authorized_keys
-
+- openssl aes-256-cbc -K $encrypted_db2095f63ba3_key -iv $encrypted_db2095f63ba3_iv
+  -in deploy_rsa.enc -out deploy_rsa -d
+- which scp
+- which ssh
+- ls -la ~/.ssh
+- cat ~/.ssh/authorized_keys
 script:
-  - echo "Ola travis"
-  - ssh -t root@167.99.6.108 touch /root/projects/foo
-
+- echo "Ola travis"
+- ssh -t root@167.99.6.108 touch /root/projects/foo
 addons:
   ssh_known_hosts: 167.99.6.108
