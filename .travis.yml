@@ -1,15 +1,16 @@
 language: node_js
 
-services:
-  - docker
+# services:
+#   - docker
 
 before_install:
-  - docker build -t my_domain/project_name -f ./Dockerfile .
-  - docker save my_domain/project_name | gzip -c > app_image.tar.gz
-  - chmod +r app_image.tar.gz
+  # - docker build -t my_domain/project_name -f ./Dockerfile .
+  # - docker save my_domain/project_name | gzip -c > app_image.tar.gz
+  # - chmod +r app_image.tar.gz
   - which scp
   - which ssh
   - ls -la ~/.ssh
+  - cat ~/.ssh/authorized_keys
 
 script:
   - echo "Ola travis"
