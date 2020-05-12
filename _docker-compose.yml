@@ -1,0 +1,10 @@
+version: '2'
+services:
+  app:
+    restart: always
+    image: my_domain/project_name
+    ports:
+      - 8090
+    environment:
+      - INITIAL_MESSAGE=Ola mundo
+    mem_limit: 512m

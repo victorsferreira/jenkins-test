@@ -1,10 +1,10 @@
 version: '2'
 services:
-  app:
+  jenkins:
     restart: always
-    image: my_domain/project_name
+    image: jenkins/jenkins:lts
+    volumes:
+      - ~/projects/victor/yousages/data/jenkins:/var/jenkins_home
     ports:
-      - 8090
-    environment:
-      - INITIAL_MESSAGE=Ola mundo
-    mem_limit: 512m
+      - 8080:8080
+      - 5000:5000
